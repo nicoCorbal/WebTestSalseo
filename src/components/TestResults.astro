@@ -1,0 +1,55 @@
+---
+interface ResultUser {
+  username: string;
+  percentage: number;
+}
+
+interface Props {
+  results: ResultUser[];
+}
+
+const { results } = Astro.props;
+---
+
+<div class="bg-gray-900 text-white p-6 rounded-lg shadow-lg">
+  <h2 class="text-2xl font-bold mb-3">TUS RESULTADOS</h2>
+  <p class="text-sm text-gray-300 mb-6">Estas son las personas con las que has compatibilizado</p>
+  
+  <div class="space-y-3 mb-8">
+    {results.map(user => (
+      <div class="flex items-center justify-between bg-black/20 p-2 rounded">
+        <div class="flex items-center">
+          <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center mr-3 shrink-0">
+            <span class="text-white font-bold">@</span>
+          </div>
+          <span class="text-sm">{user.username}</span>
+        </div>
+        <span class="font-bold text-sm">{user.percentage}%</span>
+      </div>
+    ))}
+  </div>
+  
+  <div class="bg-black/20 p-4 rounded-lg text-center mt-6">
+    <div class="mb-4 relative">
+      <span class="absolute top-0 right-2 text-4xl text-red-500">🔒</span>
+      <span class="block text-lg font-bold">Desbloquea todos tus</span> 
+      <span class="block text-lg font-bold">matches por solo 1€</span>
+    </div>
+    
+    <div class="flex justify-center gap-4 mb-4 mt-6">
+      <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center">
+        <span class="text-white font-bold">@</span>
+      </div>
+      <div class="w-8 h-8 rounded-full bg-pink-600 flex items-center justify-center">
+        <span class="text-white font-bold">IG</span>
+      </div>
+      <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+        <span class="text-white font-bold">FB</span>
+      </div>
+    </div>
+    
+    <button class="bg-red-600 text-white font-bold py-3 px-6 rounded-md hover:bg-red-700 transition w-full">
+      Ver todos los matches
+    </button>
+  </div>
+</div> 

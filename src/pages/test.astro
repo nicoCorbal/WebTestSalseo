@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TestQuestion from '../components/TestQuestion.astro';
+---
+
+<Layout title="Test - Pregunta 1">
+  <div class="min-h-screen flex flex-col p-3">
+    <div class="bg-gray-800/70 text-white p-2 rounded-lg text-center text-sm mb-3">
+      <span class="font-bold text-red-400">{5376}</span> personas ya esperan su match!
+    </div>
+    
+    <TestQuestion 
+      number={1}
+      total={10}
+      type="multiple"
+      question="¿Cuáles son tus hobbies favoritos?"
+      options={[
+        "Opción 1 Ejemplo",
+        "Opción 2 Ejemplo",
+        "Opción 3 Ejemplo",
+        "Opción 4 Ejemplo"
+      ]}
+    />
+  </div>
+</Layout> 

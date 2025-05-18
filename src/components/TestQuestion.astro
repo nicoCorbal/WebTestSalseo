@@ -1,0 +1,74 @@
+---
+interface Props {
+  number: number;
+  total: number;
+  type: "multiple" | "simple";
+  question: string;
+  options: string[];
+}
+
+const { number, total, type, question, options } = Astro.props;
+---
+
+<div class="bg-gray-900 text-white p-6 rounded-lg shadow-lg">
+  <div class="mb-6">
+    <div class="flex items-center justify-between mb-2">
+      <div class="flex items-center">
+        <span class="text-red-500 font-bold text-xl">{number}</span>
+        <span class="text-gray-400">/</span>
+        <span class="text-gray-400">{total}</span>
+      </div>
+      <div class="text-xs text-gray-300">
+        Pregunta de opción {type === "multiple" ? "múltiple" : "simple"}
+      </div>
+    </div>
+    
+    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+      <div 
+        class="bg-gradient-to-r from-red-500 to-red-400 h-full" 
+        style={`width: ${(number / total) * 100}%`}
+      ></div>
+    </div>
+  </div>
+  
+  <div class="mb-6">
+    <h2 class="text-lg font-medium mb-5">{question}</h2>
+    
+    {type === "multiple" ? (
+      <div class="space-y-3">
+        {options.map((option, index) => (
+          <div class="flex items-start">
+            <div class="mt-0.5">
+              <input 
+                type="checkbox" 
+                id={`option-${index}`} 
+                class="w-5 h-5 mr-3 accent-red-500 bg-transparent border border-white/30 rounded"
+              />
+            </div>
+            <label for={`option-${index}`} class="cursor-pointer">{option}</label>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="space-y-4">
+        {options.map((option, index) => (
+          <div class="flex items-start">
+            <div class="mt-0.5">
+              <input 
+                type="radio" 
+                name="question" 
+                id={`option-${index}`} 
+                class="w-5 h-5 mr-3 accent-red-500 bg-transparent border border-white/30 rounded-full"
+              />
+            </div>
+            <label for={`option-${index}`} class="cursor-pointer">{option}</label>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+  
+  <a href={number === total ? "/thanks" : type === "multiple" ? "/test-simple" : "/test"} class="block w-full bg-red-600 text-white py-3 px-4 rounded-md font-bold hover:bg-red-700 transition text-center">
+    Siguiente
+  </a>
+</div> 

@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TestHeader from '../components/TestHeader.astro';
+import ProfileForm from '../components/ProfileForm.astro';
+---
+
+<Layout title="Crea tu perfil">
+  <div class="min-h-screen flex flex-col">
+    <TestHeader 
+      title="CREA TU PERFIL" 
+      subtitle="Incluye al menos una red social" 
+    />
+    
+    <div class="p-3">
+      <div class="bg-gray-800/70 text-white p-2 rounded-lg text-center text-sm mb-3">
+        <span class="font-bold text-red-400">{5376}</span> personas ya esperan su match!
+      </div>
+      
+      <ProfileForm />
+    </div>
+  </div>
+</Layout> 

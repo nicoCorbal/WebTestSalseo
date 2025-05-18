@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TestHeader from '../components/TestHeader.astro';
+import TestResults from '../components/TestResults.astro';
+
+const mockResults = [
+  { username: "@salseousc", percentage: 96 },
+  { username: "@salseousc", percentage: 93 },
+  { username: "@salseousc", percentage: 85 },
+  { username: "@salseousc", percentage: 84 },
+  { username: "@salseousc", percentage: 80 }
+];
+---
+
+<Layout title="Tus Resultados">
+  <div class="min-h-screen flex flex-col">
+    <TestHeader 
+      title="TUS RESULTADOS" 
+      subtitle="Estas son las personas con las que has compatibilizado" 
+    />
+    
+    <div class="p-3">
+      <TestResults results={mockResults} />
+    </div>
+  </div>
+</Layout> 
