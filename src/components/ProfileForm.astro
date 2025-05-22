@@ -1,69 +1,78 @@
-<main class="min-h-screen w-full flex flex-col bg-[#e31c25]" style="max-width: 430px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 40px;">
-  <!-- Notch superior -->
-  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-[#1c1c1c] rounded-b-xl z-10"></div>
-  
-  <!-- Contenido principal -->
-  <div class="flex flex-col flex-grow px-8 pt-16 pb-6">
-    <!-- Header -->
-    <header class="mb-4">
-      <h1 class="text-white text-3xl font-black leading-tight mb-2">CREA TU PERFIL</h1>
-      <p class="text-white text-base font-medium leading-snug">Incluye al menos una red social<br>para que la gente pueda contactar contigo</p>
-    </header>
+<div class="min-h-[100dvh] w-full flex items-center justify-center md:bg-[#222]">
+  <div class="flex flex-col h-full min-h-[100dvh] w-full md:max-w-[430px] md:rounded-3xl md:shadow-2xl md:overflow-hidden"
+       style="background: #222;">
     
-    <!-- Formulario -->
-    <form class="flex flex-col gap-4 mt-6">
-      <!-- Instagram -->
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 flex items-center justify-center">
-          <img src="/instagram.svg" alt="Instagram" class="w-6 h-6" loading="lazy" />
-        </div>
-        <div class="flex-1 bg-black text-white rounded-md px-4 py-2.5 flex items-center">
-          <span class="text-sm font-medium">ppazosp</span>
+    <!-- Contenido principal -->
+    <div class="flex flex-col h-full min-h-[100dvh] w-full">
+      <!-- Header -->
+      <div class="text-white flex-[1.5] flex items-center relative" style="padding-inline: max(10%, 20px);">
+        <div class="max-w-full">
+          <div class="text-[clamp(28px,8vw,40px)] font-black leading-[1] tracking-tighter mb-6">CREA TU PERFIL</div>
+          <p class="text-[clamp(18px,5vw,22px)] font-light leading-[1.4]">Incluye al menos una red social<br>para que la gente pueda contactar contigo</p>
         </div>
       </div>
       
-      <!-- X (Twitter) -->
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 flex items-center justify-center">
-          <img src="/twitter.svg" alt="X" class="w-6 h-6" loading="lazy" />
-        </div>
-        <div class="flex-1 bg-black text-white rounded-md px-4 py-2.5 flex items-center">
-          <span class="text-sm font-medium">ppazosp</span>
+      <!-- Formulario -->
+      <div class="flex-[3] px-8 pb-6 padding flex flex-col items-center">
+        <form class="flex flex-col mt-2 items-center" style="width: 200px;">
+          <!-- Instagram -->
+          <div class="flex items-center gap-5" style="margin-top: 0;">
+            <div class="w-[50px] h-[50px] flex items-center justify-center">
+              <img src="/instagram.svg" alt="Instagram" class="w-[45px] h-[45px]" loading="lazy" />
+            </div>
+            <div class="bg-white rounded-md flex items-center justify-center" style="width: 200px; height: 50px; background: #fff !important;">
+              <input type="text" placeholder="@usuario" class="bg-white border-none outline-none text-sm font-medium pl-6 text-black" style="width: 170px;" />
+            </div>
+          </div>
+          
+          <!-- X (Twitter) -->
+          <div class="flex items-center gap-5" style="margin-top: 16px;">
+            <div class="w-[50px] h-[50px] flex items-center justify-center">
+              <img src="/x.svg" alt="X" class="w-[45px] h-[45px]" loading="lazy" />
+            </div>
+            <div class="bg-white rounded-md flex items-center justify-center" style="width: 200px; height: 50px; background: #fff !important;">
+              <input type="text" placeholder="@usuario" class="bg-white border-none outline-none text-sm font-medium pl-6 text-black" style="width: 170px;" />
+            </div>
+          </div>
+          
+          <!-- Threads -->
+          <div class="flex items-center gap-5" style="margin-top: 16px;">
+            <div class="w-[50px] h-[50px] flex items-center justify-center">
+              <img src="/threads.svg" alt="Threads" class="w-[45px] h-[45px]" loading="lazy" />
+            </div>
+            <div class="bg-white rounded-md flex items-center justify-center" style="width: 200px; height: 50px; background: #fff !important;">
+              <input type="text" placeholder="@usuario" class="bg-white border-none outline-none text-sm font-medium pl-6 text-black" style="width: 170px;" />
+            </div>
+          </div>
+          
+          <!-- Ciudad -->
+          <div class="flex items-center gap-3" style="margin-top: 80px;">
+            <div class="w-[50px] h-[50px] flex items-center justify-center">
+              <img src="/city.svg" alt="Ciudad" class="w-[45px] h-[45px]" loading="lazy" />
+            </div>
+            <div class="bg-white rounded-md flex items-center justify-center relative" style="width: 200px; height: 50px; background: #fff !important;">
+              <select class="w-full bg-white border-none outline-none text-sm font-medium appearance-none cursor-pointer pl-6 text-black text-center">
+                <option value="" disabled selected class="text-center">Selecciona ciudad</option>
+                <option value="santiago">Santiago de Compostela</option>
+                <option value="coruna">A Coruña</option>
+                <option value="madrid">Madrid</option>
+                <option value="barcelona">Barcelona</option>
+                <option value="salamanca">Salamanca</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Botón -->
+          <div style="margin-top: 60px; text-align: center; width: 100%;">
+            <button type="submit" style="width: 200px; height: 50px; background: #ED1C24 !important; color: #fff !important; border-radius: 0.375rem !important; font-weight: bold !important; font-size: 1.125rem !important; text-align: center !important;">Empezar</button>
+          </div>
+        </form>
+        
+        <!-- Logo OSIX -->
+        <div style="text-align: center; width: 100%; margin-top: auto; margin-bottom: 10px;">
+          <img src="/osix_poweredby.png" alt="Powered by OSIX" style="height: clamp(20px, 6vw, 30px); margin: 0 auto;" />
         </div>
       </div>
-      
-      <!-- Threads -->
-      <div class="flex items-center gap-3">
-        <div class="w-7 h-7 flex items-center justify-center">
-          <img src="/threads.svg" alt="Threads" class="w-6 h-6" loading="lazy" />
-        </div>
-        <div class="flex-1 bg-black text-white rounded-md px-4 py-2.5 flex items-center">
-          <span class="text-sm font-medium">ppazosp</span>
-        </div>
-      </div>
-      
-      <!-- Ciudad -->
-      <div class="flex items-center gap-3 mt-2">
-        <div class="w-7 h-7 flex items-center justify-center">
-          <img src="/location.svg" alt="Ciudad" class="w-6 h-6" loading="lazy" />
-        </div>
-        <div class="flex-1 bg-black text-white rounded-md px-4 py-2.5 flex items-center justify-between">
-          <span class="text-sm font-medium">Santiago</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </div>
-      
-      <!-- Botón -->
-      <div class="mt-10 text-center">
-        <button type="submit" class="bg-black text-white rounded-md font-bold text-lg py-2.5 px-8">Empezar</button>
-      </div>
-    </form>
-    
-    <!-- Logo OSIX -->
-    <div class="flex justify-center w-full mt-auto">
-      <img src="/osix_poweredby.png" alt="Powered by OSIX" class="h-5" loading="lazy" />
     </div>
   </div>
-</main>
+</div>
