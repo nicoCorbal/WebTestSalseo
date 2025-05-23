@@ -4,22 +4,18 @@ import TestQuestion from '../components/TestQuestion.astro';
 ---
 
 <Layout title="Test - Pregunta 2">
-  <div class="min-h-screen flex flex-col p-3">
-    <div class="bg-gray-800/70 text-white p-2 rounded-lg text-center text-sm mb-3">
-      <span class="font-bold text-red-400">{870}</span> personas vieron esto así!
-    </div>
-    
-    <TestQuestion 
-      number={2}
-      total={10}
-      type="simple"
-      question="¿Qué tipo de música prefieres?"
-      options={[
-        "Opción 1 Ejemplo",
-        "Opción 1 Ejemplo",
-        "Opción 1 Ejemplo",
-        "Opción 1 Ejemplo"
-      ]}
-    />
-  </div>
+  <TestQuestion 
+    number={2}
+    total={10}
+    type="simple"
+    question=""
+    options={[
+      "Opción 1",
+      "Opción 2",
+      "Opción 3",
+      "Opción 4",
+      
+    ]}
+    peopleText="¡870 personas visten como tú!"
+  />
 </Layout> 
